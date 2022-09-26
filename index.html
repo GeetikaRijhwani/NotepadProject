@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Devsnest Notepad</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Rubik&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+	<div class="container">
+		<!-- Header section of the project -->
+		<header>
+			<h1>DEVSNEST NOTEPAD</h1>
+		</header>
+
+		<!-- Add Note section -->
+		<section class="add-note">
+			<a id="open"><div class="add-btn"><span>+</span></div></a>
+		</section>
+		<br><br>
+		<h4>Click on the + icon above to create a note</h4>
+		<br><br>
+		<h4>Click on any of the notes to update them</h4>
+		<!-- Display Notes Section -->
+		<section class="display-note">
+			<div class="notes">
+			</div>
+		</section>
+		
+
+	</div>
+
+	<!-- Create note modal -->
+	<div class="modal-container" id="modal_container">
+		<div class="modal">
+			<div class="nav">
+				<div class="copy">
+					<a id="copy_btn" onclick="copyText()">
+						<i class="fa-regular fa-copy"></i>
+					</a>
+				</div>
+				<div class="bold">
+					<button class="fontStyle" id="bold_btn" onclick="document.execCommand( 'bold',false,null);">
+						<i class="fa fa-bold" aria-hidden="true"></i>
+					</button>
+				</div>
+			</div>
+			<!-- <textarea id="editor" class="text" placeholder="Add your note"></textarea> -->
+			<fieldset id="editor" contenteditable="true" placeholder="Add your note">Add your note here
+			  </fieldset>
+			<div class="save">
+				<input type="text" id="note_name" class="note-name" placeholder="Name of your note">
+				<button class="save-btn" id="save_btn">Save</button>
+				<button class="save-btn" id="close_btn">Close</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- Update note modal -->
+	<div class="modal-container" id="update_modal_container">
+		<div class="modal">
+			<div class="nav">
+				<div class="copy">
+					<a id="copy_btn" onclick="copyText()">
+						<i class="fa-regular fa-copy"></i>
+					</a>
+				</div>
+				<div class="bold">
+					<button class="fontStyle" id="bold_btn" onclick="document.execCommand( 'bold',false,null);">
+						<i class="fa fa-bold" aria-hidden="true"></i>
+					</button>
+				</div>
+			</div>
+			<!-- <textarea id="editor" class="text" placeholder="Add your note"></textarea> -->
+			<fieldset id="upeditor" contenteditable="true"></fieldset>
+			<div class="save">
+				<input type="text" id="upnote_name" class="note-name" placeholder="Name of your note">
+				<button class="save-btn" id="save_btn1" onclick="saveUpdatedNote()">Update</button>
+				<button class="save-btn" id="close_btn1">Close</button>
+			</div>
+		</div>
+	</div>
+<script src="index.js"></script>
+</body>
+</html>
